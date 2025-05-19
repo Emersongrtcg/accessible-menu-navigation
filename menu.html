@@ -10,29 +10,29 @@
 <body>
     <h1>It's possible to navigate with arrow keys in the web!</h1>
     <button type="button">This button is outside the menu</button>
-    <h2>Menu</h2>
-    <menu>
-        <li><button type="button">Item 1</button></li>
-        <li><button type="button">Item 2</button></li>
-        <li>
-            <button type="button">Item 3: submenu</button>
-            <menu>
-                <li><button type="button">Item 3.1</button></li>
-                <li><button type="button">Item 3.2</button></li>
-                <li><button type="button">Item 3.3</button></li>
-                <li><button type="button">Item 3.4</button></li>
+    <h2 id="menu-title">Menu</h2>
+    <menu role="menubar" aria-labelledby="menu-title">
+        <li role="menuitem"><button type="button">Item 1</button></li>
+        <li role="menuitem"><button type="button">Item 2</button></li>
+        <li role="menuitem" aria-haspopup="true">
+            <button type="button" popovertarget="item-3-submenu">Item 3: submenu</button>
+            <menu role="menu" id="item-3-submenu" popover>
+                <li role="menuitem"><button type="button">Item 3.1</button></li>
+                <li role="menuitem"><button type="button">Item 3.2</button></li>
+                <li role="menuitem"><button type="button">Item 3.3</button></li>
+                <li role="menuitem"><button type="button">Item 3.4</button></li>
             </menu>
         </li>
-        <li>
-            <button type="button">Item 4: submenu</button>
-            <menu>
-                <li><button type="button">Item 4.1</button></li>
-                <li><button type="button">Item 4.2</button></li>
-                <li><button type="button">Item 4.3</button></li>
-                <li><button type="button">Item 4.4</button></li>
+        <li role="menuitem" aria-haspopup="true">
+            <button type="button" popovertarget="item-4-submenu">Item 4: submenu</button>
+            <menu role="menu" id="item-4-submenu" popover>
+                <li role="menuitem"><button type="button">Item 4.1</button></li>
+                <li role="menuitem"><button type="button">Item 4.2</button></li>
+                <li role="menuitem"><button type="button">Item 4.3</button></li>
+                <li role="menuitem"><button type="button">Item 4.4</button></li>
             </menu>
         </li>
-        <li><button type="button">Item 5</button></li>
+        <li role="menuitem"><button type="button">Item 5</button></li>
     </menu>
     <button type="button">This button is also outside the menu</button>
     <div>
