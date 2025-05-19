@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Menu</title>
+</head>
+
+<body>
+    <h1>It's possible to navigate with arrow keys in the web!</h1>
+    <button type="button">This button is outside the menu</button>
+    <h2>Menu</h2>
+    <menu>
+        <li><button type="button">Item 1</button></li>
+        <li><button type="button">Item 2</button></li>
+        <li>
+            <button type="button">Item 3: submenu</button>
+            <menu>
+                <li><button type="button">Item 3.1</button></li>
+                <li><button type="button">Item 3.2</button></li>
+                <li><button type="button">Item 3.3</button></li>
+                <li><button type="button">Item 3.4</button></li>
+            </menu>
+        </li>
+        <li>
+            <button type="button">Item 4: submenu</button>
+            <menu>
+                <li><button type="button">Item 4.1</button></li>
+                <li><button type="button">Item 4.2</button></li>
+                <li><button type="button">Item 4.3</button></li>
+                <li><button type="button">Item 4.4</button></li>
+            </menu>
+        </li>
+        <li><button type="button">Item 5</button></li>
+    </menu>
+    <button>This button is also outside the menu</button>
+    <div>
+        <p>Last clicked button: <span id="btn-text"></span></p>
+    </div>
+</body>
+
+</html>
