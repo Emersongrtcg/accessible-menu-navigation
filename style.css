@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+:focus {
+    outline: green solid 2px;
+}
+
+menu {
+    list-style: none;
+    padding: 0.5rem;
+
+    &[role="menubar"] {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+[role="menuitem"] button {
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+}
+
+button[popovertarget]::after {
+    content: "▲";
+    display: inline-block;
+    margin-left: 1ch;
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+}
+
+[aria-current="true"]>button[popovertarget]::after {
+    transform: rotate(0deg);
+}
+
+li:has([popovertarget="item-3-submenu"]) {
+    anchor-name: --item-3;
+    --anchor: --item-3;
+}
+
+li:has([popovertarget="item-4-submenu"]) {
+    anchor-name: --item-4;
+    --anchor: --item-4;
+}
+
+menu[role="menu"] {
+    margin: 0;
+    position: absolute;
+    position-anchor: var(--anchor);
+    top: anchor(bottom);
+    left: anchor(left);
+}
