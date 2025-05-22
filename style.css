@@ -33,6 +33,14 @@ button[popovertarget]::after {
     transition: transform 0.5s;
 }
 
+[aria-current="true"]>button {
+    background-color: aquamarine;
+
+    &:hover {
+        background-color: aqua;
+    }
+}
+
 [aria-current="true"]>button[popovertarget]::after {
     transform: rotate(0deg);
 }
@@ -48,9 +56,9 @@ li:has([popovertarget="item-4-submenu"]) {
 }
 
 menu[role="menu"] {
-    margin: 0;
-    position: absolute;
     position-anchor: var(--anchor);
+    inset: auto;
+    margin: auto;
     top: anchor(bottom);
     left: anchor(left);
 }
