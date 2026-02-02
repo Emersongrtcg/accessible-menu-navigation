@@ -19,6 +19,7 @@ menu {
     padding: 0.5rem;
     border-radius: 4px;
     transition: background-color 0.3s;
+    text-align: unset;
 
     &:hover {
         background-color: #e0e0e0;
@@ -54,8 +55,13 @@ li:has(>[popovertarget]) {
 
 menu[role="menu"] {
     position-anchor: --super-menu;
+    width: auto;
     inset: auto;
-    margin: auto;
     top: anchor(bottom);
     left: anchor(left);
+    right: anchor(right);
+
+    button {
+        width: 100%;
+    }
 }
