@@ -25,12 +25,18 @@ menu {
     }
 }
 
-button[popovertarget]::after {
-    content: "▲";
-    display: inline-block;
-    margin-left: 1ch;
-    transform: rotate(180deg);
-    transition: transform 0.5s;
+button[popovertarget] {
+    &::after {
+        content: "▲";
+        display: inline-block;
+        margin-left: 1ch;
+        transform: rotate(180deg);
+        transition: transform 0.5s;
+    }
+
+    [aria-current="true"] > &::after {
+        transform: rotate(0deg);
+    }
 }
 
 [aria-current="true"]>button {
@@ -41,9 +47,6 @@ button[popovertarget]::after {
     }
 }
 
-[aria-current="true"]>button[popovertarget]::after {
-    transform: rotate(0deg);
-}
 
 li:has([popovertarget="item-3-submenu"]) {
     anchor-name: --item-3;
