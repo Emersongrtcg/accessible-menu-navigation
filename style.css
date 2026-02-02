@@ -47,19 +47,13 @@ button[popovertarget] {
     }
 }
 
-
-li:has([popovertarget="item-3-submenu"]) {
-    anchor-name: --item-3;
-    --anchor: --item-3;
-}
-
-li:has([popovertarget="item-4-submenu"]) {
-    anchor-name: --item-4;
-    --anchor: --item-4;
+li:has(>[popovertarget]) {
+    anchor-name: --super-menu;
+    anchor-scope: --super-menu;
 }
 
 menu[role="menu"] {
-    position-anchor: var(--anchor);
+    position-anchor: --super-menu;
     inset: auto;
     margin: auto;
     top: anchor(bottom);
