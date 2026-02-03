@@ -27,11 +27,23 @@ a11y.menu.AccessibleMenu = class {
             }
 
             button.subMenu = document.getElementById(popoverTargetId);
+
+            this.#initializeSubMenu(button.subMenu, button);
         });
     }
 
     #appendButtonsTo(menu) {
         menu.buttons = menu.querySelectorAll('& > [role="menuitem"] > button');
+    }
+
+    #initializeSubMenu(menu, parentMenu) {
+        menu.parentMenu = parentMenu;
+        this.#appendButtonsTo(menu);
+
+        const navMap = this.navigator.subMenuNavMap;
+        menu.buttons.forEach((button, index) => {
+            this.#initializeButton(button, index, navMap, menu);
+        });
     }
 
     #initializeButton(button, index, navMap, menu) {
