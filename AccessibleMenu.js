@@ -1,7 +1,7 @@
 window.a11y ??= {};
 a11y.menu ??= {};
 
-if (! a11y.menu.Navigator) {
+if (!a11y.menu.Navigator) {
     throw new Error('Navigator.js was not properly loaded.');
 }
 
@@ -67,8 +67,8 @@ a11y.menu.AccessibleMenu = class {
 
             pressedKey =
                 pressedKey === ' ' ? 'Space' :
-                (pressedKey === 'Tab' && event.shiftKey === true) ? 'ShiftTab' :
-                pressedKey;
+                    (pressedKey === 'Tab' && event.shiftKey === true) ? 'ShiftTab' :
+                        pressedKey;
 
             button.navigate(pressedKey);
         });
